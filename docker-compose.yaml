@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: go_htmx_app
+    ports:
+      - "8080:8080"
+    environment:
+      - XATA_API_KEY=${XATA_API_KEY}
+      - XATA_DATABASE_URL=${XATA_DATABASE_URL}
+    restart: always
+
+
+
+# version: '3.8'
+
+# services:
+#   app:
+#     build: .
+#     container_name: go_htmx_app
+#     ports:
+#       - "8080:8080"
+#     env_file:   # 🔥 Load environment variables from .env
+#       - .env
+#     restart: always
